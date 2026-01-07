@@ -1,7 +1,7 @@
 locals {
   src_image = "${local.lambda_source_ecr}/${var.lambda_source_image}:${var.lambda_source_image_tag}"
   lambda_source_ecr = "${var.lambda_source_account}.dkr.ecr.us-east-1.amazonaws.com"
-  dst_image_ecr = var.lambda_use_ecr_pull_through_cache ? "${data.aws_caller_identity.current.account_id}.dkr.ecr.${data.aws_region.current}.amazonaws.com/${aws_ecr_pull_through_cache_rule.ecr_public_cache[0].ecr_repository_prefix}/${var.lambda_source_image}" : ""
+  dst_image_ecr = var.lambda_use_ecr_pull_through_cache ? "${data.aws_caller_identity.current.account_id}.dkr.ecr.${data.aws_region.current.region}.amazonaws.com/${aws_ecr_pull_through_cache_rule.ecr_public_cache[0].ecr_repository_prefix}/${var.lambda_source_image}" : ""
 }
 
 resource "aws_ecr_pull_through_cache_rule" "ecr_public_cache" {
