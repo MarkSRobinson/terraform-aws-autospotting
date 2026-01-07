@@ -26,7 +26,7 @@ data "aws_arn" "lambda_function_arn" {
 resource "aws_lambda_function" "autospotting" {
   function_name = "autospotting-lambda-${module.label.id}"
   package_type  = "Image"
-  image_uri     = "${aws_ecr_repository.autospotting.repository_url}:${var.lambda_source_image_tag}"
+  image_uri     = local.dst_image_ecr
   role          = var.use_existing_iam_role ? data.aws_arn.role_arn[0].arn : aws_iam_role.autospotting_role[0].arn
   timeout       = var.lambda_timeout
   memory_size   = var.lambda_memory_size
@@ -59,9 +59,6 @@ resource "aws_lambda_function" "autospotting" {
       TERMINATION_NOTIFICATION_ACTION          = var.autospotting_termination_notification_action
     }
   }
-  depends_on = [
-    docker_registry_image.destination,
-  ]
 }
 
 data "aws_iam_policy_document" "lambda_policy" {

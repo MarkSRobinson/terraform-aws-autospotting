@@ -67,9 +67,14 @@ variable "autospotting_spot_allocation_strategy" {
 
 variable "lambda_timeout" {}
 variable "lambda_memory_size" {}
-variable "lambda_source_ecr" {}
+variable "lambda_source_account" {}
 variable "lambda_source_image" {}
 variable "lambda_source_image_tag" {}
+variable "lambda_use_ecr_pull_through_cache" {
+  type = bool
+  description = "Use an ECR pull-through cache to keep local copies of the lambda"
+  default = true
+}
 
 variable "lambda_use_public_ecr" {
   type        = bool

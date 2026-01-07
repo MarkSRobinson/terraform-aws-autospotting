@@ -1,3 +1,7 @@
+locals {
+  lambda_source_ecr = "${var.lambda_source_account}.dkr.ecr.us-east-1.amazonaws.com"
+}
+
 module "label" {
   source  = "git::https://github.com/cloudposse/terraform-null-label.git?ref=0.25.0"
   context = module.this
@@ -55,7 +59,7 @@ module "aws_lambda_function" {
   label_context = module.label.context
 
   lambda_cpu_architecture = var.lambda_cpu_architecture
-  lambda_source_ecr       = var.lambda_source_ecr
+  lambda_source_account = var.lambda_source_account
   lambda_source_image     = var.lambda_source_image
   lambda_source_image_tag = var.lambda_source_image_tag
   lambda_timeout          = var.lambda_timeout
