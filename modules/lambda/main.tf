@@ -147,6 +147,7 @@ data "aws_iam_policy_document" "autospotting_policy" {
       "elasticloadbalancing:DescribeTargetHealth",
       "iam:CreateServiceLinkedRole",
       "iam:PassRole",
+      "kms:ReEncryptFrom",
       "logs:CreateLogGroup",
       "logs:CreateLogStream",
       "logs:PutLogEvents",
