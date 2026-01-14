@@ -9,7 +9,7 @@ module "regional_resources_ap-northeast-1" {
 
   autospotting_sqs_queue_url = var.autospotting_sqs_queue_url
   autospotting_sqs_queue_arn = var.autospotting_sqs_queue_arn
-  event_bus_arn              = data.aws_cloudwatch_event_bus.default.arn
+  event_bus_arn              = aws_cloudwatch_event_bus.filtered_bus.arn
   main_region                = data.aws_region.current.name
   put_event_role_arn         = var.put_event_role_arn
 
@@ -25,7 +25,7 @@ module "regional_resources_ap-northeast-2" {
 
   autospotting_sqs_queue_url = var.autospotting_sqs_queue_url
   autospotting_sqs_queue_arn = var.autospotting_sqs_queue_arn
-  event_bus_arn              = data.aws_cloudwatch_event_bus.default.arn
+  event_bus_arn              = aws_cloudwatch_event_bus.filtered_bus.arn
   main_region                = data.aws_region.current.name
   put_event_role_arn         = var.put_event_role_arn
 
@@ -41,7 +41,7 @@ module "regional_resources_ap-northeast-3" {
 
   autospotting_sqs_queue_url = var.autospotting_sqs_queue_url
   autospotting_sqs_queue_arn = var.autospotting_sqs_queue_arn
-  event_bus_arn              = data.aws_cloudwatch_event_bus.default.arn
+  event_bus_arn              = aws_cloudwatch_event_bus.filtered_bus.arn
   main_region                = data.aws_region.current.name
   put_event_role_arn         = var.put_event_role_arn
 
@@ -57,7 +57,7 @@ module "regional_resources_ap-south-1" {
 
   autospotting_sqs_queue_url = var.autospotting_sqs_queue_url
   autospotting_sqs_queue_arn = var.autospotting_sqs_queue_arn
-  event_bus_arn              = data.aws_cloudwatch_event_bus.default.arn
+  event_bus_arn              = aws_cloudwatch_event_bus.filtered_bus.arn
   main_region                = data.aws_region.current.name
   put_event_role_arn         = var.put_event_role_arn
 
@@ -73,7 +73,7 @@ module "regional_resources_ap-southeast-1" {
 
   autospotting_sqs_queue_url = var.autospotting_sqs_queue_url
   autospotting_sqs_queue_arn = var.autospotting_sqs_queue_arn
-  event_bus_arn              = data.aws_cloudwatch_event_bus.default.arn
+  event_bus_arn              = aws_cloudwatch_event_bus.filtered_bus.arn
   main_region                = data.aws_region.current.name
   put_event_role_arn         = var.put_event_role_arn
 
@@ -89,7 +89,7 @@ module "regional_resources_ap-southeast-2" {
 
   autospotting_sqs_queue_url = var.autospotting_sqs_queue_url
   autospotting_sqs_queue_arn = var.autospotting_sqs_queue_arn
-  event_bus_arn              = data.aws_cloudwatch_event_bus.default.arn
+  event_bus_arn              = aws_cloudwatch_event_bus.filtered_bus.arn
   main_region                = data.aws_region.current.name
   put_event_role_arn         = var.put_event_role_arn
 
@@ -105,7 +105,7 @@ module "regional_resources_ca-central-1" {
 
   autospotting_sqs_queue_url = var.autospotting_sqs_queue_url
   autospotting_sqs_queue_arn = var.autospotting_sqs_queue_arn
-  event_bus_arn              = data.aws_cloudwatch_event_bus.default.arn
+  event_bus_arn              = aws_cloudwatch_event_bus.filtered_bus.arn
   main_region                = data.aws_region.current.name
   put_event_role_arn         = var.put_event_role_arn
 
@@ -121,7 +121,7 @@ module "regional_resources_eu-central-1" {
 
   autospotting_sqs_queue_url = var.autospotting_sqs_queue_url
   autospotting_sqs_queue_arn = var.autospotting_sqs_queue_arn
-  event_bus_arn              = data.aws_cloudwatch_event_bus.default.arn
+  event_bus_arn              = aws_cloudwatch_event_bus.filtered_bus.arn
   main_region                = data.aws_region.current.name
   put_event_role_arn         = var.put_event_role_arn
 
@@ -137,7 +137,7 @@ module "regional_resources_eu-north-1" {
 
   autospotting_sqs_queue_url = var.autospotting_sqs_queue_url
   autospotting_sqs_queue_arn = var.autospotting_sqs_queue_arn
-  event_bus_arn              = data.aws_cloudwatch_event_bus.default.arn
+  event_bus_arn              = aws_cloudwatch_event_bus.filtered_bus.arn
   main_region                = data.aws_region.current.name
   put_event_role_arn         = var.put_event_role_arn
 
@@ -153,7 +153,7 @@ module "regional_resources_eu-west-1" {
 
   autospotting_sqs_queue_url = var.autospotting_sqs_queue_url
   autospotting_sqs_queue_arn = var.autospotting_sqs_queue_arn
-  event_bus_arn              = data.aws_cloudwatch_event_bus.default.arn
+  event_bus_arn              = aws_cloudwatch_event_bus.filtered_bus.arn
   main_region                = data.aws_region.current.name
   put_event_role_arn         = var.put_event_role_arn
 
@@ -169,7 +169,7 @@ module "regional_resources_eu-west-2" {
 
   autospotting_sqs_queue_url = var.autospotting_sqs_queue_url
   autospotting_sqs_queue_arn = var.autospotting_sqs_queue_arn
-  event_bus_arn              = data.aws_cloudwatch_event_bus.default.arn
+  event_bus_arn              = aws_cloudwatch_event_bus.filtered_bus.arn
   main_region                = data.aws_region.current.name
   put_event_role_arn         = var.put_event_role_arn
 
@@ -185,7 +185,7 @@ module "regional_resources_eu-west-3" {
 
   autospotting_sqs_queue_url = var.autospotting_sqs_queue_url
   autospotting_sqs_queue_arn = var.autospotting_sqs_queue_arn
-  event_bus_arn              = data.aws_cloudwatch_event_bus.default.arn
+  event_bus_arn              = aws_cloudwatch_event_bus.filtered_bus.arn
   main_region                = data.aws_region.current.name
   put_event_role_arn         = var.put_event_role_arn
 
@@ -201,7 +201,7 @@ module "regional_resources_sa-east-1" {
 
   autospotting_sqs_queue_url = var.autospotting_sqs_queue_url
   autospotting_sqs_queue_arn = var.autospotting_sqs_queue_arn
-  event_bus_arn              = data.aws_cloudwatch_event_bus.default.arn
+  event_bus_arn              = aws_cloudwatch_event_bus.filtered_bus.arn
   main_region                = data.aws_region.current.name
   put_event_role_arn         = var.put_event_role_arn
 
@@ -217,7 +217,7 @@ module "regional_resources_us-east-1" {
 
   autospotting_sqs_queue_url = var.autospotting_sqs_queue_url
   autospotting_sqs_queue_arn = var.autospotting_sqs_queue_arn
-  event_bus_arn              = data.aws_cloudwatch_event_bus.default.arn
+  event_bus_arn              = aws_cloudwatch_event_bus.filtered_bus.arn
   main_region                = data.aws_region.current.name
   put_event_role_arn         = var.put_event_role_arn
 
@@ -233,7 +233,7 @@ module "regional_resources_us-east-2" {
 
   autospotting_sqs_queue_url = var.autospotting_sqs_queue_url
   autospotting_sqs_queue_arn = var.autospotting_sqs_queue_arn
-  event_bus_arn              = data.aws_cloudwatch_event_bus.default.arn
+  event_bus_arn              = aws_cloudwatch_event_bus.filtered_bus.arn
   main_region                = data.aws_region.current.name
   put_event_role_arn         = var.put_event_role_arn
 
@@ -249,7 +249,7 @@ module "regional_resources_us-west-1" {
 
   autospotting_sqs_queue_url = var.autospotting_sqs_queue_url
   autospotting_sqs_queue_arn = var.autospotting_sqs_queue_arn
-  event_bus_arn              = data.aws_cloudwatch_event_bus.default.arn
+  event_bus_arn              = aws_cloudwatch_event_bus.filtered_bus.arn
   main_region                = data.aws_region.current.name
   put_event_role_arn         = var.put_event_role_arn
 
@@ -265,7 +265,7 @@ module "regional_resources_us-west-2" {
 
   autospotting_sqs_queue_url = var.autospotting_sqs_queue_url
   autospotting_sqs_queue_arn = var.autospotting_sqs_queue_arn
-  event_bus_arn              = data.aws_cloudwatch_event_bus.default.arn
+  event_bus_arn              = aws_cloudwatch_event_bus.filtered_bus.arn
   main_region                = data.aws_region.current.name
   put_event_role_arn         = var.put_event_role_arn
 

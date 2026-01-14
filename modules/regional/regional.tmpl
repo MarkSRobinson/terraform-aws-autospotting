@@ -10,7 +10,7 @@ module "regional_resources_${region}" {
 
   autospotting_sqs_queue_url = var.autospotting_sqs_queue_url
   autospotting_sqs_queue_arn = var.autospotting_sqs_queue_arn
-  event_bus_arn              = data.aws_cloudwatch_event_bus.default.arn
+  event_bus_arn              = aws_cloudwatch_event_bus.filtered_bus.arn
   main_region                = data.aws_region.current.name
   put_event_role_arn         = var.put_event_role_arn
 
